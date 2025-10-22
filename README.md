@@ -1,8 +1,9 @@
-# Template Repository
+# To-do List Project
 
-A pre-configured webpack starter template for quick project setup. Includes webpack bundling, CSS loading, HTML templating, and development server with hot reload.
+In this project, I create a to-do list webpage using Javascript, HTML and CSS.
 
-## Quick Start
+## To Copy this Project
+
 ```bash
 # Clone this template
 git clone https://github.com/yourusername/template-repository.git my-new-project
@@ -17,12 +18,3 @@ npm run dev
 # Build for production
 npm run build
 ```
-
-## What's Included
-
-- Webpack 5 with dev and prod configurations
-- Custom npm scripts
-- HTML templating
-- CSS loader with style injection
-- Development server with live reload
-- Source maps for debugging
