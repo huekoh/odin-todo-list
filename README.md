@@ -6,7 +6,7 @@ In this project, I create a to-do list webpage using Javascript, HTML and CSS.
 
 ```bash
 # Clone this template
-git clone https://github.com/yourusername/template-repository.git my-new-project
+git clone git@github.com:huekoh/odin-todo-list.git my-new-project
 cd my-new-project
 
 # Install dependencies
