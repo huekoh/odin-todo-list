@@ -55,16 +55,29 @@ h5 {
 }
 
 body {
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: #ccdab5;
+  height: 94vh;
+
+  display: flex;
+  gap: 1.5rem;
+}
+
+#side-nav {
+  padding-top: 1.5rem;
+
+  flex-shrink: 0;
+  width: 286px;
+  transition: all 0.3s ease;
 }
 
 #user-card {
-  width: 275px;
+  width: 260px;
 
   padding: 0.8rem;
   background-color: #ffffff80;
   border-radius: 0.8rem;
+  box-shadow: -11px 11px 16px -7px rgba(46, 46, 46, 0.3);
 
   display: flex;
   align-items: center;
@@ -83,4 +96,23 @@ body {
   height: 100%;
   object-position: center;
   object-fit: cover;
+}
+
+#task-list {
+  background-color: #ffffff80;
+  box-shadow: -11px 11px 16px -7px rgba(46, 46, 46, 0.3);
+  border-radius: 0.8rem;
+
+  flex: 1;
+  min-width: 400px;
+}
+
+@media (max-width: 920px) {
+  #side-nav {
+    display: none;
+  }
+
+  #task-list {
+    min-width: 400px;
+  }
 }
