@@ -50,6 +50,37 @@ button {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+h5 {
+  font-size: var(--text-base);
+}
+
 body {
+  padding: 2rem;
   background-color: #ccdab5;
+}
+
+#user-card {
+  width: 275px;
+
+  padding: 0.8rem;
+  background-color: #ffffff80;
+  border-radius: 0.8rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.img-container {
+  width: 56px;
+  height: 56px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.img-container > img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
 }
