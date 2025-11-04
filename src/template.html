@@ -6,22 +6,64 @@
     <title>Document</title>
   </head>
   <body>
-    <aside id="side-nav">
-      <article id="user-card">
-        <div class="img-container">
-          <img src="./assets/user_icon.jpg" alt="image of user icon" />
+    <header>
+      <div class="img-container small">
+        <img src="./assets/site_icon.png" alt="image of user icon" />
+      </div>
+      <h3>Tasked Up</h3>
+    </header>
+    <div id="main-page">
+      <aside id="side-nav">
+        <article id="user-card">
+          <div class="img-container">
+            <img src="./assets/user_icon.jpg" alt="image of user icon" />
+          </div>
+          <div class="text-container">
+            <h4 class="username">HUE KOH</h4>
+            <p class="email">hue.odin@gmail.com</p>
+          </div>
+        </article>
+
+        <div class="menu">
+          <h5>MAIN MENU</h5>
+          <div class="menu-button">
+            <div class="image-container very-small">
+              <img
+                src="./assets/search_icon.svg"
+                alt="image of search icon"
+                class="icon"
+              />
+            </div>
+            <button>Search</button>
+          </div>
+          <div class="menu-button">
+            <div class="image-container very-small">
+              <img
+                src="./assets/inbox_icon.svg"
+                alt="image of inbox icon"
+                class="icon"
+              />
+            </div>
+            <button>All Tasks</button>
+          </div>
+          <div class="menu-button">
+            <div class="image-container very-small">
+              <img
+                src="./assets/calendar_icon.svg"
+                alt="image of calendar icon"
+                class="icon"
+              />
+            </div>
+            <button>Today's Tasks</button>
+          </div>
         </div>
-        <div class="text-container">
-          <h5 class="username">HUE KOH</h5>
-          <p class="email">hue.odin@gmail.com</p>
+
+        <div class="projects">
+          <h5>PROJECTS</h5>
         </div>
-      </article>
+      </aside>
 
-      <div class="menu"></div>
-
-      <div class="projects"></div>
-    </aside>
-
-    <section id="task-list"></section>
+      <section id="task-list"></section>
+    </div>
   </body>
 </html>
