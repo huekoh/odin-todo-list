@@ -50,7 +50,13 @@ label,
 button {
   font-family: Inter, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color: #333727;
+  color: #424636;
+}
+
+input,
+textarea,
+select {
+  color: #6a6d61;
 }
 
 h2 {
@@ -82,6 +88,19 @@ body {
   background-color: #ccdab5;
 }
 
+.animate-button {
+  box-shadow: 0 6px #868686;
+}
+
+.animate-button:active {
+  box-shadow: 0 3px #737373;
+  transform: translateY(3px);
+}
+
+.no-animate-button:active {
+  filter: brightness(0.9);
+}
+
 /* size classes for icons */
 .small {
   width: 36px;
@@ -96,7 +115,7 @@ body {
 /* stylings for template elements */
 #main-page {
   display: flex;
-  height: 92.5vh;
+  height: 100vh;
   min-height: 600px;
 
   display: flex;
@@ -105,7 +124,7 @@ body {
 
 #page-header {
   padding: 0 1.8rem;
-  height: 4rem;
+  height: 3.2rem;
   background-color: #ffffff;
   box-shadow: -11px 11px 16px -7px rgba(46, 46, 46, 0.15);
 
@@ -226,7 +245,7 @@ body {
 
 /* button */
 .create-task {
-  background-color: #fad5a4;
+  background-color: #f7ddab;
 
   margin-right: 2rem;
   margin-left: auto;
@@ -235,17 +254,19 @@ body {
 
   border-style: none;
   border-radius: 0.6rem;
-  box-shadow: 0 6px #868686;
 
   font-size: var(--text-base);
 }
 
 .create-task:active {
-  box-shadow: 0 3px #737373;
-  transform: translateY(4px);
+  background-color: #ffda94;
 }
 
 /* create task form that appears when create task button is clicked, otherwise hidden */
+#form-container {
+  display: none;
+}
+
 #task-form {
   width: 88%;
   margin: 0 auto;

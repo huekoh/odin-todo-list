@@ -6,12 +6,14 @@
     <title>Document</title>
   </head>
   <body>
+    <!--
     <header id="page-header">
       <div class="img-container small">
         <img src="./assets/images/site_icon.png" alt="image of user icon" />
       </div>
-      <h2>Toodles</h2>
+      <h3>Toodles</h3>
     </header>
+    -->
     <div id="main-page">
       <aside id="side-nav">
         <article id="user-card">
@@ -43,7 +45,7 @@
                 class="icon"
               />
             </div>
-            <button>All Tasks</button>
+            <button>Inbox</button>
           </div>
           <div class="menu-button">
             <div class="image-container very-small">
@@ -64,8 +66,8 @@
 
       <section id="task-list">
         <header>
-          <h2>All Tasks</h2>
-          <button class="create-task">+ New Task</button>
+          <h2>Inbox</h2>
+          <button class="create-task animate-button">+ New Task</button>
         </header>
         <hr />
 
@@ -89,12 +91,21 @@
                 type="date"
                 id="task-due-date"
                 class="input-field type-option"
+                required
               />
-              <select id="task-project" class="input-field type-option">
+              <select
+                id="task-project"
+                class="input-field type-option"
+                required
+              >
                 <option value="" disabled selected>Project</option>
                 <option value="default">None</option>
               </select>
-              <select id="task-priority" class="input-field type-option">
+              <select
+                id="task-priority"
+                class="input-field type-option"
+                required
+              >
                 <option value="" disabled selected>Priority</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
@@ -102,8 +113,12 @@
               </select>
             </div>
             <div class="form-actions">
-              <button type="button" class="btn-cancel">Cancel</button>
-              <button type="submit" class="btn-submit">Create Task</button>
+              <button type="button" class="btn-cancel no-animate-button">
+                Cancel
+              </button>
+              <button type="submit" class="btn-submit no-animate-button">
+                Create Task
+              </button>
             </div>
           </form>
         </div>
