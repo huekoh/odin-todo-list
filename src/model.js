@@ -6,4 +6,5 @@ export const state = {
 
 export const addTask = (taskData) => {
   state.tasks.push(taskData);
+  storage.saveToStorage(state.tasks);
 };
