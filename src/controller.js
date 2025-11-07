@@ -3,7 +3,11 @@ import * as model from "./model.js";
 import * as view from "./view.js";
 
 const init = () => {
-  //set up event handlers
+  // restore all persisted tasks in local storage
+  model.restoreModel();
+  view.renderTasks(model.state.tasks);
+
+  // set up event handlers
   view.addHandlerAddTask(controlAddTask);
 };
 

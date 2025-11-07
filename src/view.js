@@ -1,4 +1,28 @@
-export const renderTasks = (tasks) => {};
+export const renderTasks = (tasks) => {
+  console.log(
+    "printing from view module before card is rendered with task details"
+  );
+  console.log(tasks);
+  const taskList = document.getElementById("task-cards");
+  taskList.innerHTML = "";
+  for (const item of tasks) {
+    const newTaskCard = document.createElement("div");
+    newTaskCard.classList.add("task-card");
+
+    const title = document.createElement("h4");
+    title.innerText = item.title;
+
+    const description = document.createElement("p");
+    description.innerText = item.description;
+
+    const dueDate = document.createElement("p");
+    dueDate.innerText = item.dueDate;
+
+    newTaskCard.append(title, description, dueDate);
+
+    taskList.appendChild(newTaskCard);
+  }
+};
 
 export const addHandlerAddTask = (handler) => {
   const createTaskBtn = document.querySelector(".create-task");
