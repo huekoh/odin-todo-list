@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
+    <header id="page-header">
       <div class="img-container small">
         <img src="./assets/images/site_icon.png" alt="image of user icon" />
       </div>
@@ -63,8 +63,50 @@
       </aside>
 
       <section id="task-list">
-        <h2>All Tasks</h2>
+        <header>
+          <h2>All Tasks</h2>
+          <button class="create-task">+ New Task</button>
+        </header>
         <hr />
+
+        <div id="form-container">
+          <form id="task-form">
+            <input
+              type="text"
+              id="task-title"
+              class="input-field write"
+              placeholder="Task Title"
+              required
+            />
+            <textarea
+              id="task-description"
+              class="input-field write"
+              placeholder="Add description"
+              rows="2"
+            ></textarea>
+            <div class="form-row">
+              <input
+                type="date"
+                id="task-due-date"
+                class="input-field type-option"
+              />
+              <select id="task-project" class="input-field type-option">
+                <option value="" disabled selected>Project</option>
+                <option value="default">None</option>
+              </select>
+              <select id="task-priority" class="input-field type-option">
+                <option value="" disabled selected>Priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-cancel">Cancel</button>
+              <button type="submit" class="btn-submit">Create Task</button>
+            </div>
+          </form>
+        </div>
       </section>
     </div>
   </body>

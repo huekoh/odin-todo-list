@@ -1,3 +1,4 @@
+/* normalise and reset default broswer stylings */
 :root {
   line-height: 1.5;
 
@@ -81,17 +82,7 @@ body {
   background-color: #ccdab5;
 }
 
-header {
-  padding: 0 1.8rem;
-  height: 4rem;
-  background-color: #ffffff;
-  box-shadow: -11px 11px 16px -7px rgba(46, 46, 46, 0.15);
-
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
+/* size classes for icons */
 .small {
   width: 36px;
   height: 36px;
@@ -102,6 +93,7 @@ header {
   height: 32px;
 }
 
+/* stylings for template elements */
 #main-page {
   display: flex;
   height: 92.5vh;
@@ -111,6 +103,18 @@ header {
   align-items: center;
 }
 
+#page-header {
+  padding: 0 1.8rem;
+  height: 4rem;
+  background-color: #ffffff;
+  box-shadow: -11px 11px 16px -7px rgba(46, 46, 46, 0.15);
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* styling for side nav components */
 #side-nav {
   background-color: #3a5955;
   padding: 2rem 1.5rem;
@@ -191,6 +195,7 @@ header {
   text-align: left;
 }
 
+/* styling for tasks component */
 #task-list {
   background-color: #ffffff80;
   box-shadow: -11px 11px 16px -7px rgba(46, 46, 46, 0.3);
@@ -205,9 +210,110 @@ header {
   margin: 0 auto;
 }
 
-#task-list > h2 {
+#task-list > header {
+  display: flex;
+  justify-content: center;
+}
+
+#task-list > hr {
+  margin: 1rem 0rem;
+}
+
+#task-list > header > h2 {
+  font-size: var(--text-2xl);
   padding: 0rem 2rem;
-  padding-bottom: 0.2rem;
+}
+
+/* button */
+.create-task {
+  background-color: #fad5a4;
+
+  margin-right: 2rem;
+  margin-left: auto;
+  padding: 0 1rem;
+  height: 42px;
+
+  border-style: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 6px #868686;
+
+  font-size: var(--text-base);
+}
+
+.create-task:active {
+  box-shadow: 0 3px #737373;
+  transform: translateY(4px);
+}
+
+/* create task form that appears when create task button is clicked, otherwise hidden */
+#task-form {
+  width: 88%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-field {
+  border-style: none;
+  outline: none;
+  width: 95%;
+  padding: 0.2rem 0.4rem;
+}
+
+.type-option {
+  padding: 0.4rem;
+  width: 150px;
+  border-style: solid;
+  border-color: #00000050;
+  border-width: 0.8px;
+  border-radius: 0.4rem;
+}
+
+.form-row {
+  margin-bottom: 0.4rem;
+  display: flex;
+  gap: 1rem;
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+option {
+  color: black;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.form-actions button {
+  border-style: none;
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.8rem;
+}
+
+#task-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+}
+
+#task-description {
+  resize: none;
+}
+
+.no-border:active {
+  border-style: none;
 }
 
 @media (max-width: 920px) {
