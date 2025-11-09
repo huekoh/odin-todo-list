@@ -1,29 +1,3 @@
-export const renderTasks = (tasks) => {
-  console.log(
-    "printing from view module before card is rendered with task details"
-  );
-  console.log(tasks);
-  const taskList = document.getElementById("task-cards");
-  taskList.innerHTML = "";
-  for (const item of tasks) {
-    const newTaskCard = document.createElement("div");
-    newTaskCard.classList.add("task-card");
-
-    const title = document.createElement("h4");
-    title.innerText = item.title;
-
-    const description = document.createElement("p");
-    description.innerText = item.description;
-
-    const dueDate = document.createElement("p");
-    dueDate.innerText = item.dueDate;
-
-    newTaskCard.append(title, description, dueDate);
-
-    taskList.appendChild(newTaskCard);
-  }
-};
-
 export const addHandlerAddTask = (handler) => {
   const createTaskBtn = document.querySelector(".create-task");
   createTaskBtn.addEventListener("click", showTaskForm);
@@ -40,6 +14,7 @@ export const addHandlerAddTask = (handler) => {
       dueDate: document.getElementById("task-due-date").value,
       project: document.getElementById("task-project").value,
       priority: document.getElementById("task-priority").value,
+      completed: 0,
     };
 
     handler(taskData);
@@ -49,6 +24,82 @@ export const addHandlerAddTask = (handler) => {
 
   const closeFormBtn = document.querySelector(".btn-cancel");
   closeFormBtn.addEventListener("click", hideTaskForm);
+};
+
+export const addHandlerChangeTaskStatus = (handler) => {
+  const taskList = document.getElementById("task-cards");
+  taskList.addEventListener("change", (e) => {
+    if (e.target.classList.contains("task-completion")) {
+      const taskId = e.target.parentElement.id;
+      handler(taskId);
+    }
+  });
+};
+
+export const createTaskComponent = (item) => {
+  const newTaskCard = document.createElement("div");
+  newTaskCard.id = item.id;
+  newTaskCard.classList.add("task-card");
+
+  const checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  checkBox.name = "task-completion";
+  checkBox.classList.add("task-completion");
+
+  const taskCardInfo = document.createElement("div");
+  taskCardInfo.classList.add("task-card-info");
+
+  const title = document.createElement("h4");
+  title.innerText = item.title;
+
+  const description = document.createElement("p");
+  description.innerText = item.description;
+
+  const dueDate = document.createElement("p");
+  dueDate.innerText = item.dueDate;
+
+  taskCardInfo.append(title, description, dueDate);
+  newTaskCard.append(checkBox, taskCardInfo);
+
+  return newTaskCard;
+};
+
+export const updateTaskStatus = (taskId, isCompleted) => {
+  const taskCard = document.getElementById(taskId);
+  if (!taskCard) {
+    return;
+  }
+
+  const checkBox = taskCard.querySelector(".task-completion");
+  const taskInfo = taskCard.querySelector(".task-card-info");
+
+  checkBox.checked = isCompleted;
+
+  if (isCompleted) {
+    taskInfo.classList.add("completed");
+  } else {
+    taskInfo.classList.remove("completed");
+  }
+};
+
+export const renderOneTask = (task) => {
+  const taskList = document.getElementById("task-cards");
+  const newTask = createTaskComponent(task);
+  taskList.appendChild(newTask);
+};
+
+export const renderAllTasks = (tasks) => {
+  console.log(
+    "printing from view module before card is rendered with task details"
+  );
+  console.log(tasks);
+  const taskList = document.getElementById("task-cards");
+  taskList.innerHTML = "";
+
+  for (const item of tasks) {
+    const newTask = createTaskComponent(item);
+    taskList.appendChild(newTask);
+  }
 };
 
 const showTaskForm = () => {

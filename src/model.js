@@ -13,3 +13,12 @@ export const addTask = (taskData) => {
   storage.clearStorage();
   storage.saveToStorage(state.tasks);
 };
+
+export const changeTaskStatus = (taskId) => {
+  const taskToUpdate = state.tasks.find((task) => task.id === taskId);
+  if (taskToUpdate) {
+    taskToUpdate.completed = taskToUpdate.completed === 0 ? 1 : 0;
+    storage.saveToStorage(state.tasks);
+  }
+  return taskToUpdate;
+};
