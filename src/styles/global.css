@@ -359,7 +359,10 @@ option {
   margin: 0 auto;
   padding: 1rem;
   background-color: #ffffff;
-  border-radius: 1rem;
+
+  border-radius: 0.8rem;
+  border-left: 0.8rem solid;
+  border-color: #3a5955;
 
   display: flex;
   gap: 0.8rem;

@@ -42,6 +42,7 @@ const controlChangeInbox = (newInboxState) => {
   }
 
   view.renderTasks(tasks);
+  view.updateInboxStatus(newInboxState);
 };
 
 init();

@@ -64,6 +64,11 @@ export const createTaskComponent = (item) => {
   const taskCardInfo = document.createElement("div");
   taskCardInfo.classList.add("task-card-info");
 
+  if (item.completed) {
+    checkBox.checked = true;
+    taskCardInfo.classList.add("completed");
+  }
+
   const title = document.createElement("h4");
   title.innerText = item.title;
 
@@ -113,6 +118,19 @@ export const renderTasks = (tasks) => {
   for (const item of tasks) {
     const newTask = createTaskComponent(item);
     taskList.appendChild(newTask);
+  }
+};
+
+export const updateInboxStatus = (inboxStatus) => {
+  const inboxHeader = document.getElementById("inbox-header");
+  if (inboxStatus == "all") {
+    inboxHeader.innerHTML = "All Tasks";
+  }
+  if (inboxStatus == "today") {
+    inboxHeader.innerHTML = "Today";
+  }
+  if (inboxStatus == "completed") {
+    inboxHeader.innerHTML = "Completed";
   }
 };
 
