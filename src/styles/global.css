@@ -87,7 +87,10 @@ p {
 body {
   background-color: #ccdab5;
   margin: 0;
-  overflow: hidden;
+}
+
+html {
+  overscroll-behavior-y: none;
 }
 
 .animate-button {
@@ -103,12 +106,20 @@ body {
   filter: brightness(0.9);
 }
 
+.hidden-btn {
+  background-color: #ffffff00;
+  border-style: none;
+  padding: 0;
+}
+
 /* stylings for template elements */
 #main-page {
   height: 100vh;
   min-height: 600px;
 
   display: flex;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #page-header {
@@ -129,7 +140,7 @@ body {
 
   flex-shrink: 0;
   width: 320px;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   transition: all 0.3s ease;
 
@@ -196,7 +207,7 @@ body {
   gap: 0.2rem;
 }
 
-.menu-button-container img {
+.icon {
   filter: invert(89%) sepia(5%) saturate(273%) hue-rotate(355deg)
     brightness(98%) contrast(91%);
 }
@@ -211,6 +222,32 @@ body {
   width: 100%;
   height: 100%;
   text-align: left;
+}
+
+#more-options {
+  position: relative;
+  margin-top: auto;
+}
+
+#settings-popup {
+  position: absolute;
+  left: 3.5rem;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  width: 120px;
+  padding: 0.4rem;
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+}
+
+#settings-popup button {
+  border-style: none;
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.8rem;
 }
 
 /* styling for tasks component */
