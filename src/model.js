@@ -7,6 +7,7 @@ export const state = {
 
 export const restoreModel = () => {
   state.tasks = storage.loadTasksFromStorage();
+  state.inboxState = storage.loadInboxStateFromStorage();
 };
 
 export const retrieveAllTasksData = () => {
@@ -47,5 +48,10 @@ export const updateTaskStatus = (taskId) => {
 export const updateInboxState = (newInboxState) => {
   const oldInboxState = state.inboxState;
   state.inboxState = newInboxState;
+  storage.saveInboxStateToStorage(newInboxState);
   return oldInboxState !== newInboxState;
+};
+
+export const retrieveInboxState = () => {
+  return state.inboxState;
 };

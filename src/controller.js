@@ -5,8 +5,20 @@ import * as view from "./view.js";
 const init = () => {
   // restore all persisted data in local storage
   model.restoreModel();
-  const allTasks = model.retrieveAllTasksData();
-  view.renderTasks(allTasks);
+  const newInboxState = model.retrieveInboxState();
+  let tasks = [];
+  if (newInboxState === "all") {
+    tasks = model.retrieveAllTasksData();
+  }
+  if (newInboxState === "today") {
+    tasks = model.retrieveTodayTasksData();
+  }
+  if (newInboxState === "completed") {
+    tasks = model.retrieveCompletedTasksData();
+  }
+  // render persisted data
+  view.renderTasks(tasks);
+  view.updateInboxStatus(newInboxState);
 
   // set up event handlers
   view.addHandlerAddTask(controlAddTask);
