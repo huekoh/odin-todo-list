@@ -10,6 +10,11 @@ export const restoreModel = () => {
   state.inboxState = storage.loadInboxStateFromStorage();
 };
 
+export const clearAllTasks = () => {
+  state.tasks = [];
+  storage.clearStorage();
+};
+
 export const retrieveAllTasksData = () => {
   return state.tasks;
 };

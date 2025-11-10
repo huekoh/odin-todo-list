@@ -22,8 +22,10 @@ const init = () => {
 
   // set up event handlers
   view.addHandlerAddTask(controlAddTask);
+  view.addHandlerClearAllTasks(controlClearAllTasks);
   view.addHandlerChangeTaskStatus(controlChangeTaskStatus);
   view.addHandlerChangeInbox(controlChangeInbox);
+  view.createAccessSettingsEvents();
 };
 
 const controlAddTask = (taskData) => {
@@ -55,6 +57,11 @@ const controlChangeInbox = (newInboxState) => {
 
   view.renderTasks(tasks);
   view.updateInboxStatus(newInboxState);
+};
+
+const controlClearAllTasks = () => {
+  model.clearAllTasks();
+  view.renderTasks([]);
 };
 
 init();

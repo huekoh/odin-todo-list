@@ -49,7 +49,28 @@ export const addHandlerChangeInbox = (handler) => {
   });
 };
 
+export const addHandlerClearAllTasks = (handler) => {
+  const clearAllBtn = document.getElementById("settings-clear-btn");
+  clearAllBtn.addEventListener("click", () => {
+    handler();
+  });
+};
+
 // DOM manipulation/creation functions
+
+export const createAccessSettingsEvents = () => {
+  const settingsPopUp = document.getElementById("settings-popup");
+
+  const settingsBtn = document.getElementById("settings-btn");
+  settingsBtn.addEventListener("click", () => {
+    settingsPopUp.style.display = "flex";
+  });
+
+  const closeSettingBtn = document.getElementById("settings-close-btn");
+  closeSettingBtn.addEventListener("click", () => {
+    settingsPopUp.style.display = "none";
+  });
+};
 
 export const createTaskComponent = (item) => {
   const newTaskCard = document.createElement("div");
