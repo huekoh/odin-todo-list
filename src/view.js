@@ -54,7 +54,7 @@ export const addHandlerChangeInbox = (handler) => {
 export const createTaskComponent = (item) => {
   const newTaskCard = document.createElement("div");
   newTaskCard.id = item.id;
-  newTaskCard.classList.add("task-card");
+  newTaskCard.classList.add("task-card", `priority-${item.priority}`);
 
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
