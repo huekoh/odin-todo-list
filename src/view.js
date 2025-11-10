@@ -105,7 +105,7 @@ export const updateTaskStatus = (taskId, isCompleted) => {
 export const renderOneTask = (task) => {
   const taskList = document.getElementById("task-cards");
   const newTask = createTaskComponent(task);
-  taskList.appendChild(newTask);
+  taskList.insertBefore(newTask, taskList.firstChild);
 };
 
 export const renderTasks = (tasks) => {
@@ -124,7 +124,7 @@ export const renderTasks = (tasks) => {
 export const updateInboxStatus = (inboxStatus) => {
   const inboxHeader = document.getElementById("inbox-header");
   if (inboxStatus == "all") {
-    inboxHeader.innerHTML = "All Tasks";
+    inboxHeader.innerHTML = "All Inbox";
   }
   if (inboxStatus == "today") {
     inboxHeader.innerHTML = "Today";
