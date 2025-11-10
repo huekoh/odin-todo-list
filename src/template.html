@@ -25,10 +25,11 @@
             <p class="email">hue.odin@gmail.com</p>
           </div>
         </article>
-        <div class="menu">
+        <div id="menu">
           <h3>Main Menu</h3>
+          <!--
           <div class="menu-button">
-            <div class="image-container very-small">
+            <div class="img-container very-small">
               <img
                 src="./assets/images/search_icon.svg"
                 alt="image of search icon"
@@ -37,25 +38,36 @@
             </div>
             <button>Search</button>
           </div>
-          <div class="menu-button">
-            <div class="image-container very-small">
+          -->
+          <div class="menu-button-container">
+            <div class="img-container very-small">
               <img
                 src="./assets/images/inbox_icon.svg"
                 alt="image of inbox icon"
                 class="icon"
               />
             </div>
-            <button>Inbox</button>
+            <button class="menu-button" id="all">All Inbox</button>
           </div>
-          <div class="menu-button">
-            <div class="image-container very-small">
+          <div class="menu-button-container">
+            <div class="img-container very-small">
               <img
                 src="./assets/images/calendar_icon.svg"
                 alt="image of calendar icon"
                 class="icon"
               />
             </div>
-            <button>Today's Tasks</button>
+            <button class="menu-button" id="today">Today</button>
+          </div>
+          <div class="menu-button-container">
+            <div class="img-container very-small">
+              <img
+                src="./assets/images/complete_icon.svg"
+                alt="image of completed task icon"
+                class="icon"
+              />
+            </div>
+            <button class="menu-button" id="completed">Completed</button>
           </div>
         </div>
 
@@ -66,7 +78,7 @@
 
       <section id="task-list">
         <header>
-          <h2>Inbox</h2>
+          <h2>All Inbox</h2>
           <button class="create-task animate-button">+ New Task</button>
         </header>
         <hr />

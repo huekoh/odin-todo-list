@@ -1,3 +1,5 @@
+// add handler functions
+
 export const addHandlerAddTask = (handler) => {
   const createTaskBtn = document.querySelector(".create-task");
   createTaskBtn.addEventListener("click", showTaskForm);
@@ -35,6 +37,19 @@ export const addHandlerChangeTaskStatus = (handler) => {
     }
   });
 };
+
+export const addHandlerChangeInbox = (handler) => {
+  const menu = document.getElementById("menu");
+  menu.addEventListener("click", (e) => {
+    if (e.target.classList.contains("menu-button")) {
+      const newInboxState = e.target.id;
+      console.log(newInboxState);
+      handler(newInboxState);
+    }
+  });
+};
+
+// DOM manipulation/creation functions
 
 export const createTaskComponent = (item) => {
   const newTaskCard = document.createElement("div");
@@ -88,11 +103,10 @@ export const renderOneTask = (task) => {
   taskList.appendChild(newTask);
 };
 
-export const renderAllTasks = (tasks) => {
+export const renderTasks = (tasks) => {
   console.log(
     "printing from view module before card is rendered with task details"
   );
-  console.log(tasks);
   const taskList = document.getElementById("task-cards");
   taskList.innerHTML = "";
 
